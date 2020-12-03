@@ -9,6 +9,9 @@
 			<li class="nav-item active">
 				<a class="nav-link" href="{{route('quizzes.index')}}">Appraisals</a>
 			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="{{route('quizzes.create')}}">New Appraisal</a>
+			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="">Users</a>
 			</li>
