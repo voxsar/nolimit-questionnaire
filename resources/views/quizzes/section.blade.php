@@ -34,12 +34,14 @@
 					</div>
 					<?php $count = 1; ?>
 					@forelse($sections as $key => $questions)
-						<div class="row bg-dark text-light">
-							<div class="m-1 p-2 col-1">{{$count}}</div>
-							<div class="m-1 p-2 col-6">{{$key}}</div>
-							<div class="p-0 m-0 col">
+						@unless($key == 'N/A')
+							<div class="row bg-dark text-light">
+								<div class="m-1 p-2 col-1">{{$count}}</div>
+								<div class="m-1 p-2 col-6">{{$key}}</div>
+								<div class="p-0 m-0 col">
+								</div>
 							</div>
-						</div>
+						@endunless
 						@forelse($questions as $index => $question)
 							<div class="row border-bottom border-success">
 								<div class="m-1 p-1 col-1"><x-roman value="{{$index}}" /></div>

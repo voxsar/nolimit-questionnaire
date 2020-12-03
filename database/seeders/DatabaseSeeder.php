@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Quiz;
 use App\Models\Question;
+use App\Models\Choice;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +25,59 @@ class DatabaseSeeder extends Seeder
     			'instructions' => 's',
     		]
     	]);
+
+        Choice::insert([
+            [
+                'choice' => 'Exceptional',
+                'rating_value' => '5',
+                'section' => 'Section 01: Managerial Aspects',
+                'quiz_id' => '1'
+            ],
+            [
+                'choice' => 'Highly Effective',
+                'rating_value' => '4',
+                'section' => 'Section 01: Managerial Aspects',
+                'quiz_id' => '1'
+            ],
+            [
+                'choice' => 'Need Improvement',
+                'rating_value' => '2',
+                'section' => 'Section 01: Managerial Aspects',
+                'quiz_id' => '1'
+            ],
+            [
+                'choice' => 'Unsatisfactory',
+                'rating_value' => '1',
+                'section' => 'Section 01: Managerial Aspects',
+                'quiz_id' => '1'
+            ],
+
+
+            [
+                'choice' => 'Exceptional',
+                'rating_value' => '5',
+                'section' => 'Section 02: Behavioral Skills',
+                'quiz_id' => '1'
+            ],
+            [
+                'choice' => 'Highly Effective',
+                'rating_value' => '4',
+                'section' => 'Section 02: Behavioral Skills',
+                'quiz_id' => '1'
+            ],
+            [
+                'choice' => 'Need Improvement',
+                'rating_value' => '2',
+                'section' => 'Section 02: Behavioral Skills',
+                'quiz_id' => '1'
+            ],
+            [
+                'choice' => 'Unsatisfactory',
+                'rating_value' => '1',
+                'section' => 'Section 02: Behavioral Skills',
+                'quiz_id' => '1'
+            ],
+        ]);
 
         Question::insert([
         	[
@@ -386,13 +440,84 @@ class DatabaseSeeder extends Seeder
         		'type' => '1',
         		'quiz_id' => '1',
         	],
-        	[
-        		'question' => 'Commitment Towards Doing Best Job Possible',
-        		'category' => 'Dependability',
-        		'section' => 'Section 01: Managerial Aspects',
-        		'type' => '1',
-        		'quiz_id' => '1',
-        	],
+            [
+                'question' => 'Commitment Towards Doing Best Job Possible',
+                'category' => 'Dependability',
+                'section' => 'Section 01: Managerial Aspects',
+                'type' => '1',
+                'quiz_id' => '1',
+            ],
+
+            [
+                'question' => 'Resistance To Pressure',
+                'category' => ' ',
+                'section' => 'Section 02: Behavioral Skills',
+                'type' => '1',
+                'quiz_id' => '1',
+            ],
+            [
+                'question' => 'Flexibility & Change Agent',
+                'category' => ' ',
+                'section' => 'Section 02: Behavioral Skills',
+                'type' => '1',
+                'quiz_id' => '1',
+            ],
+            [
+                'question' => 'Innovative & Creative',
+                'category' => ' ',
+                'section' => 'Section 02: Behavioral Skills',
+                'type' => '1',
+                'quiz_id' => '1',
+            ],
+            [
+                'question' => 'Professional Development',
+                'category' => ' ',
+                'section' => 'Section 02: Behavioral Skills',
+                'type' => '1',
+                'quiz_id' => '1',
+            ],
+            [
+                'question' => 'Results Oriented',
+                'category' => ' ',
+                'section' => 'Section 02: Behavioral Skills',
+                'type' => '1',
+                'quiz_id' => '1',
+            ],
+            [
+                'question' => 'Personal Development',
+                'category' => ' ',
+                'section' => 'Section 02: Behavioral Skills',
+                'type' => '1',
+                'quiz_id' => '1',
+            ],
+            [
+                'question' => 'Passionate',
+                'category' => ' ',
+                'section' => 'Section 02: Behavioral Skills',
+                'type' => '1',
+                'quiz_id' => '1',
+            ],
+            [
+                'question' => 'Influencer',
+                'category' => ' ',
+                'section' => 'Section 02: Behavioral Skills',
+                'type' => '1',
+                'quiz_id' => '1',
+            ],
+            [
+                'question' => 'Empathy',
+                'category' => ' ',
+                'section' => 'Section 02: Behavioral Skills',
+                'type' => '1',
+                'quiz_id' => '1',
+            ],
+            [
+                'question' => 'Self Esteem',
+                'category' => ' ',
+                'section' => 'Section 02: Behavioral Skills',
+                'type' => '1',
+                'quiz_id' => '1',
+            ],
         ]);
 
         /*
