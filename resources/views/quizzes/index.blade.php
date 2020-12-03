@@ -1,9 +1,9 @@
 @extends('layouts.client')
 @push('title')
-	All Quizes
+	All Appraisals
 @endpush
 @push('breadcrumbs')
-	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Quizes</a></li>
+	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Appraisals</a></li>
 	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.index')}}">List</a></li>
 @endpush
 @section('page')
@@ -19,9 +19,9 @@
 					<tr>
 						<td>{{$quiz->name}}</td>
 						<td>
-							<a class="btn btn-success" href="{{route('quizzes.show', $quiz)}}">View Quiz</a>
-							<a class="btn btn-primary" href="{{route('quizzes.edit', $quiz)}}">Edit Quiz</a>
-							<a class="btn btn-danger" href="{{route('quizzes.show', $quiz)}}">Delete Quiz</a>
+							<a class="btn btn-success" href="{{route('quizzes.show', $quiz)}}">View Appraisal</a>
+							<a class="btn btn-primary" href="{{route('quizzes.edit', $quiz)}}">Edit Appraisal</a>
+							<a class="btn btn-danger" href="{{route('quizzes.show', $quiz)}}">Delete Appraisal</a>
 							<a class="btn btn-primary" href="{{route('quizzes.questions.index', $quiz)}}">View Questions</a>
 							<a class="btn btn-primary" href="{{route('quizzes.questions.create', $quiz)}}">Add Questions</a>
 						</td>

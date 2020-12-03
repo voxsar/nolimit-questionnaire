@@ -1,9 +1,9 @@
 @extends('layouts.client')
 @push('title')
-	New Quiz
+	New Appraisal
 @endpush
 @push('breadcrumbs')
-	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Quizes</a></li>
+	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Appraisals</a></li>
 	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.create')}}">Create</a></li>
 @endpush
 @section('page')
@@ -12,17 +12,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<x-input name="name" help="Name of the quiz" label="Quiz Name" />
+				<x-input name="name" help="Name of the quiz" label="Appraisal Name" />
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<x-textarea name="purpose" help="Purpose of Quiz" label="Purpose" />
+				<x-textarea name="purpose" help="Purpose of Appraisal" label="Purpose" />
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<x-textarea name="instructions" help="Instructions for the Quiz" label="Instructions" />
+				<x-textarea name="instructions" help="Instructions for the Appraisal" label="Instructions" />
 			</div>
 		</div>
 		<div class="row">

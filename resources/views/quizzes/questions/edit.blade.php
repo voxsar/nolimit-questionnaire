@@ -3,7 +3,7 @@
 	Add Question to "{{$quiz->name}}"
 @endpush
 @push('breadcrumbs')
-	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Quizes</a></li>
+	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Appraisals</a></li>
 	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.show', $quiz)}}">{{$quiz->name}}</a></li>
 	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.questions.index', $quiz)}}">Questions</a></li>
 	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.questions.edit', [$quiz, $question])}}">Edit</a></li>

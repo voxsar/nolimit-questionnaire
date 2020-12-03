@@ -1,9 +1,9 @@
 @extends('layouts.client')
 @push('title')
-	New Quiz
+	New Appraisal
 @endpush
 @push('breadcrumbs')
-	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Quizes</a></li>
+	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Appraisal</a></li>
 	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.create')}}">Create</a></li>
 @endpush
 @section('page')
@@ -12,12 +12,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<x-input name="name" help="Name of the quiz" label="Quiz Name" />
+				<x-input name="name" help="Name of the quiz" label="Appraisal Name" />
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<input type="submit" value="Create Quiz" class="btn btn-success">
+				<input type="submit" value="Create Appraisal" class="btn btn-success">
 			</div>
 		</div>
 	</div>
