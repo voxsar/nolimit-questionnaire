@@ -71,6 +71,8 @@ class QuizController extends Controller
             'sections' => $quiz->questions->where('section', $section)->groupBy('category'),
             'choicetitles' => $quiz->choices->where('section', $section),
             'section' => $section,
+            'back' => $quiz->questions->where('section', $section)->first()->previoussection,
+            'next' => $quiz->questions->where('section', $section)->first()->nextsection,
         );
         //return $data;
         return view('quizzes.section', $data);

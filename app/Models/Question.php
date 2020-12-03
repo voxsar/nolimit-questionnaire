@@ -14,4 +14,34 @@ class Question extends Model
     	# code...
     	return $this->hasMany("App\Models\Answer");
     }
+
+    public function getNextSectionAttribute()
+    {
+    	$sections = Question::all()->unique('section')->pluck('section');
+
+    	foreach ($sections as $key => $section) {
+    		if($section == $this->section){
+    			if(($key+1) < count($sections)){
+    				return $sections[$key+1];
+    			}else{
+    				return $sections[$key];
+    			}
+    		}
+    	}
+    }
+
+    public function getPreviousSectionAttribute()
+    {
+    	$sections = Question::all()->unique('section')->pluck('section')->reverse();
+
+    	foreach ($sections as $key => $section) {
+    		if($section == $this->section){
+    			if(($key-1) > 0){
+    				return $sections[$key-1];
+    			}else{
+    				return $sections[$key];
+    			}
+    		}
+    	}
+    }
 }
