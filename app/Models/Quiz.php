@@ -14,4 +14,10 @@ class Quiz extends Model
     	# code...
     	return $this->hasMany("App\Models\Question");
     }
+
+    public function choices()
+    {
+    	# code...
+    	return $this->hasMany("App\Models\Choice");
+    }
 }

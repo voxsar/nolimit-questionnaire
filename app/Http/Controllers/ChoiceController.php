@@ -15,15 +15,14 @@ class ChoiceController extends Controller
      * @param  \App\Models\Quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function index(Quiz $quiz, Question $question)
+    public function index(Quiz $quiz)
     {
         //
         $data = array(
-            'choices' => $question->choices,
-            'question' => $question,
+            'choices' => $quiz->choices,
             'quiz' => $quiz
         );
-        return view('quizzes.questions.choices.index', $data);
+        return view('quizzes.choices.index', $data);
     }
 
     /**
@@ -32,15 +31,14 @@ class ChoiceController extends Controller
      * @param  \App\Models\Quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function create(Quiz $quiz, Question $question)
+    public function create(Quiz $quiz)
     {
         //
         $data = array(
         	'quiz' => $quiz,
-        	'question' => $question,
         	'sections' => $quiz->questions->unique('section')->pluck('section')
         );
-        return view('quizzes.questions.choices.create', $data);
+        return view('quizzes.choices.create', $data);
     }
 
     /**
@@ -50,16 +48,16 @@ class ChoiceController extends Controller
      * @param  \App\Models\Quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Quiz $quiz, Question $question)
+    public function store(Request $request, Quiz $quiz)
     {
         //
         $choice = new Choice();
         $choice->choice = $request->choice;
         $choice->rating_value = $request->rating_value;
         $choice->section = $request->section;
-        $choice->question_id = $question->id;
+        $choice->quiz_id = $quiz->id;
         $choice->save();
-        return redirect()->route('quizzes.questions.choices.index', [$quiz, $question]);
+        return redirect()->route('quizzes.choices.index', [$quiz]);
     }
 
     /**
@@ -69,7 +67,7 @@ class ChoiceController extends Controller
      * @param  \App\Models\Choice  $choice
      * @return \Illuminate\Http\Response
      */
-    public function show(Quiz $quiz, Question $question, Choice $choice)
+    public function show(Quiz $quiz, Choice $choice)
     {
         //
     }
@@ -81,7 +79,7 @@ class ChoiceController extends Controller
      * @param  \App\Models\Choice  $choice
      * @return \Illuminate\Http\Response
      */
-    public function edit(Quiz $quiz, Question $question, Choice $choice)
+    public function edit(Quiz $quiz, Choice $choice)
     {
         //
     }
@@ -94,7 +92,7 @@ class ChoiceController extends Controller
      * @param  \App\Models\Choice  $choice
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Quiz $quiz, Question $question, Choice $choice)
+    public function update(Request $request, Quiz $quiz, Choice $choice)
     {
         //
     }
@@ -106,7 +104,7 @@ class ChoiceController extends Controller
      * @param  \App\Models\Choice  $choice
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Quiz $quiz, Question $question, Choice $choice)
+    public function destroy(Quiz $quiz, Choice $choice)
     {
         //
     }

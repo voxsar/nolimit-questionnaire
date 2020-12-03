@@ -18,7 +18,7 @@ class CreateChoicesTable extends Migration
             $table->string("choice");
             $table->integer('rating_value');
             $table->string("section");
-            $table->foreignId('question_id')
+            $table->foreignId('quiz_id')
               ->nullable()
               ->constrained()
               ->onUpdate('cascade')

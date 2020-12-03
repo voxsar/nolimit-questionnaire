@@ -9,12 +9,6 @@ class Question extends Model
 {
     use HasFactory;
 
-    public function choices()
-    {
-    	# code...
-    	return $this->hasMany("App\Models\Choice");
-    }
-
     public function answers()
     {
     	# code...

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('quizzes/{quiz}/section/{section}', [\App\Http\Controllers\QuizController::class, 'section'])->name("quizzes.section");
 Route::resource('quizzes', QuizController::class);
 Route::resource('quizzes.questions', QuestionController::class);
-Route::resource('quizzes.questions.choices', ChoiceController::class);
+Route::resource('quizzes.choices', ChoiceController::class);
 Route::resource('quizzes.answers', 'QuestionController');

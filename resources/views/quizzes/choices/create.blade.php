@@ -1,17 +1,15 @@
 @extends('layouts.client')
 @push('title')
-	Add Choice to "{{$question->question}}"
+	Add Choice to "{{$quiz->name}}"
 @endpush
 @push('breadcrumbs')
 	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Appraisals</a></li>
 	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.show', $quiz)}}">{{$quiz->name}}</a></li>
-	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.questions.index', $quiz)}}">Questions</a></li>
-	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.questions.show', [$quiz, $question])}}">{{$question->question}}</a></li>
-	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.questions.choices.index', [$quiz, $question])}}">Choices</a></li>
-	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.questions.choices.create', [$quiz, $question])}}">Create</a></li>
+	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.choices.index', [$quiz])}}">Choices</a></li>
+	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.choices.create', [$quiz])}}">Create</a></li>
 @endpush
 @section('page')
-<form action="{{route('quizzes.questions.choices.store', [$quiz, $question])}}" method="post">
+<form action="{{route('quizzes.choices.store', [$quiz])}}" method="post">
 	@csrf
 	<div class="container">
 		<div class="row">

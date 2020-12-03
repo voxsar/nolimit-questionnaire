@@ -58,10 +58,22 @@ class QuizController extends Controller
         //
         $data = array(
             'quiz' => $quiz,
-            'questions' => $quiz->questions->groupBy('section')->groupBy('category')
+            'questions' => $quiz->questions->groupBy('section')->groupBy('category'),
+            'next' => $quiz->questions->pluck('section')->first()
         );
-        return $data;
         return view('quizzes.show', $data);
+    }
+
+    public function section(Quiz $quiz, $section)
+    {
+        $data = array(
+            'quiz' => $quiz,
+            'sections' => $quiz->questions->where('section', $section)->groupBy('category'),
+            'choicetitles' => $quiz->choices->where('section', $section),
+            'section' => $section,
+        );
+        //return $data;
+        return view('quizzes.section', $data);
     }
 
     /**
