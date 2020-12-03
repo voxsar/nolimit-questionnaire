@@ -8,7 +8,9 @@
 @push("scripts")
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('.summernote{{$name}}').summernote('code', '{!!$value!!}');
+			@isset($value)
+				$('.summernote{{$name}}').summernote('code', '{!!$value!!}');
+			@endisset
 		});
 	</script>
 @endpush
