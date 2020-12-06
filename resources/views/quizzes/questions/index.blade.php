@@ -29,8 +29,6 @@
 							<a class="btn btn-success" href="{{route('quizzes.questions.show', [$quiz, $question])}}">View Question</a>
 							<a class="btn btn-primary" href="{{route('quizzes.questions.edit', [$quiz, $question])}}">Edit Question</a>
 							<a class="btn btn-danger" href="{{route('quizzes.questions.show', [$quiz, $question])}}">Delete Question</a>
-							<a class="btn btn-primary" href="{{route('quizzes.questions.choices.index', [$quiz, $question])}}">View Choices</a>
-							<a class="btn btn-primary" href="{{route('quizzes.questions.choices.create', [$quiz, $question])}}">Add Choice</a>
 						</td>
 					</tr>
 				@empty
