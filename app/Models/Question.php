@@ -11,13 +11,19 @@ class Question extends Model
 
     public function answers()
     {
-    	# code...
-    	return $this->hasMany("App\Models\Answer");
+        # code...
+        return $this->hasMany("App\Models\Answer");
+    }
+
+    public function sections()
+    {
+        # code...
+        return $this->hasMany("App\Models\AnswerSection");
     }
 
     public function getNextSectionAttribute()
     {
-    	$sections = Question::all()->unique('section')->pluck('section');
+    	$sections = Question::where('quiz_id', $this->quiz_id)->get()->unique('section')->pluck('section');
 
     	foreach ($sections as $key => $section) {
     		if($section == $this->section){
@@ -32,11 +38,11 @@ class Question extends Model
 
     public function getPreviousSectionAttribute()
     {
-    	$sections = Question::all()->unique('section')->pluck('section')->reverse();
+    	$sections = Question::where('quiz_id', $this->quiz_id)->get()->unique('section')->pluck('section')->reverse();
 
     	foreach ($sections as $key => $section) {
     		if($section == $this->section){
-    			if(($key-1) > 0){
+    			if(($key-1) >= 0){
     				return $sections[$key-1];
     			}else{
     				return $sections[$key];

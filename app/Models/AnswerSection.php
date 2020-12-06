@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Answer extends Model
+class AnswerSection extends Model
 {
     use HasFactory;
 
@@ -16,21 +16,21 @@ class Answer extends Model
      */
     protected $guarded = [];
 
+    public function answer()
+    {
+    	# code...
+    	return $this->belongsTo('App\Models\Answer');
+    }
+
+    public function question()
+    {
+    	# code...
+    	return $this->belongsTo('App\Models\Question');
+    }
+
     public function user()
     {
     	# code...
     	return $this->belongsTo('App\Models\User');
-    }
-
-    public function quiz()
-    {
-    	# code...
-    	return $this->belongsTo('App\Models\Quiz');
-    }
-
-    public function sections()
-    {
-        # code...
-        return $this->hasMany('App\Models\AnswerSection');
     }
 }

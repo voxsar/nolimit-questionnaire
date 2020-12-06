@@ -20,7 +20,11 @@
 					<tr>
 						<td>{{$quiz->name}}</td>
 						<td>
-							<a class="btn btn-success" href="{{route('users.quizzes.show', [$user, $quiz])}}">Fill Appraisal</a>
+							@if($user->answers()->exists())
+								<a class="btn btn-warning" href="{{route('users.quizzes.edit', [$user, $quiz])}}">Edit Appraisal</a>
+							@else
+								<a class="btn btn-success" href="{{route('users.quizzes.show', [$user, $quiz])}}">Fill Appraisal</a>
+							@endif
 						</td>
 					</tr>
 				@empty

@@ -93,6 +93,44 @@ class UserQuizAnswerController extends Controller
     public function update(Request $request, User $user, Quiz $quiz, Answer $answer)
     {
         //
+        if($request->has("questions")){
+            foreach ($request->questions as $key => $value) {
+                # code...
+                if(array_key_exists('answer', $value)){
+                    $answer->sections()->updateOrCreate(
+                        [
+                            'user_id' => $user->id,
+                            'answer_id' => $answer->id,
+                            'question_id' => $value['question'],
+                        ],
+                        [
+                            'answer' => $value['answer'],
+                            'category' => $value['category'],
+                            'section' => $value['section'],
+                            'type' =>  $value['type'],
+                        ]
+                    );
+                }else{
+                   return redirect()->back();
+                }
+            }
+        }
+        if($request->has('next')){
+            if($request->next == $request->current){
+                return redirect()->route('thankyou');
+            }else{
+                return redirect()->route("users.quizzes.answers.section", [$user, $quiz, $answer, $request->next]);
+            }
+        }else{
+            return redirect()->route('thankyou');
+        }
+        
+    }
+
+    public function thankyou()
+    {
+        # code...
+        return view("quizzes.thankyou");
     }
 
     /**

@@ -46,6 +46,12 @@ class User extends Authenticatable
         return $this->hasMany("App\Models\Answer");
     }
 
+    public function sections()
+    {
+        # code...
+        return $this->hasMany("App\Models\AnswerSection");
+    }
+
     public function getListnameAttribute()
     {
         return $this->emp_no." ".$this->name;

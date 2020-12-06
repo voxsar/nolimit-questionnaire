@@ -28,4 +28,6 @@ Route::resource('users', UserController::class);
 Route::resource('users.quizzes', UserQuizController::class);
 
 Route::get('users/{user}/quizzes/{quiz}/answers/{answer}/section/{section}', [\App\Http\Controllers\UserQuizAnswerController::class, 'section'])->name("users.quizzes.answers.section");
+
+Route::get('thankyou', [\App\Http\Controllers\UserQuizAnswerController::class, 'thankyou'])->name("thankyou");
 Route::resource('users.quizzes.answers', UserQuizAnswerController::class);

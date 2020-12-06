@@ -92,6 +92,32 @@ class UserQuizController extends Controller
     public function edit(User $user, Quiz $quiz)
     {
         //
+        $table = collect();
+        foreach($quiz->choices->groupBy('section') as $choices){
+            foreach($quiz->questions->groupBy('section') as $key => $questions){
+                foreach($choices as $choice){
+                    $table->push([
+                        "score" => "Score: ".$key,
+                        "total" => $choices->max('rating_value') * $questions->count(),
+                    ]);
+                }
+            }
+        }
+        $answer = Answer::where('user_id', $user->id)->where('quiz_id', $quiz->id)->first();
+        if(!$answer){
+            return redirect()->route('users.quizzes.show', [$user, $quiz]);
+        }
+        $data = array(
+            'date' => Carbon::now()->format('Y-m-d'),
+            'user' => $user,
+            'quiz' => $quiz,
+            'answer' => $answer,
+            'questions' => $quiz->questions->groupBy('section')->groupBy('category'),
+            'next' => $quiz->questions->pluck('section')->first(),
+            'designations' => User::all(),
+            'table' => $table,
+        );
+        return view('users.quizzes.edit', $data);
     }
 
     /**
