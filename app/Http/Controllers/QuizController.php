@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
@@ -77,10 +78,24 @@ class QuizController extends Controller
     public function show(Quiz $quiz)
     {
         //
+        $table = collect();
+        foreach($quiz->choices->groupBy('section') as $choices){
+            foreach($quiz->questions->groupBy('section') as $key => $questions){
+                foreach($choices as $choice){
+                    $table->push([
+                        "score" => "Score: ".$key,
+                        "total" => $choices->max('rating_value') * $questions->count(),
+                    ]);
+                }
+            }
+        }
         $data = array(
+            'date' => Carbon::now()->format('Y-m-d'),
             'quiz' => $quiz,
             'questions' => $quiz->questions->groupBy('section')->groupBy('category'),
-            'next' => $quiz->questions->pluck('section')->first()
+            'next' => $quiz->questions->pluck('section')->first(),
+            'designations' => User::all(),
+            'table' => $table,
         );
         return view('quizzes.show', $data);
     }
