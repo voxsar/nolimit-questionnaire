@@ -14,19 +14,19 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<x-input name="choice" help="Choice details e.g. Exceptional" label="Choice" />
+				<x-input name="choice" value="{{$choice->choice}}" help="Choice details e.g. Exceptional" label="Choice" />
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<x-input name="rating_value" help="Choice value e.g. 1 or 5" label="Rating Value" />
+				<x-input name="rating_value" value="{{$choice->rating_value}}" help="Choice value e.g. 1 or 5" label="Rating Value" />
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form-group">
 					<label >Definition</label>
-					<textarea class="form-control" name="definition"></textarea>
+					<textarea class="form-control" name="definition">{{$choice->definition}}</textarea>
 					<small class="form-text text-muted">Definition of the Rating</small>
 				</div>
 			</div>
@@ -46,7 +46,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<input type="submit" value="Add Choice" class="btn btn-success">
+				<input type="submit" value="Update Question" class="btn btn-success">
 			</div>
 		</div>
 	</div>

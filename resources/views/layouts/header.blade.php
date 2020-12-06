@@ -13,7 +13,7 @@
 				<a class="nav-link" href="{{route('quizzes.create')}}">New Appraisal</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="">Users</a>
+				<a class="nav-link" href="{{route('users.index')}}">Users</a>
 			</li>
 		</ul>
 	</div>

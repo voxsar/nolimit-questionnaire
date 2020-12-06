@@ -11,12 +11,13 @@ class input extends Component
     public $help;
     public $type;
     public $value;
+    public $list;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $label, $help, $type = 'text', $value = '')
+    public function __construct($name, $label, $help, $list = '', $type = 'text', $value = '')
     {
         //
         $this->label = $label;
@@ -24,6 +25,7 @@ class input extends Component
         $this->help = $help;
         $this->type = $type;
         $this->value = $value;
+        $this->list = $list;
     }
 
     /**

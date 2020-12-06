@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,26 @@ class QuizController extends Controller
         //
         $data = array('quizzes' => Quiz::all());
         return view('quizzes.index', $data);
+    }
+
+    public function users(Quiz $quiz)
+    {
+        # code...
+        $data = array(
+            'quiz' => $quiz
+        );
+        return view("quizzes.users", $data);
+    }
+
+    public function selectuser(Request $request)
+    {
+        # code...
+        $user = User::where('emp_no', $request->emp_no)->first();
+        if($user){
+            return redirect()->route('users.quizzes.show', [$user, $request->quiz_id]);
+        }else{
+            return redirect()->route('quizzes.user', $request->quiz_id);
+        }
     }
 
     /**

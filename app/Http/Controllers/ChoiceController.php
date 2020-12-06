@@ -55,6 +55,7 @@ class ChoiceController extends Controller
         $choice->choice = $request->choice;
         $choice->rating_value = $request->rating_value;
         $choice->section = $request->section;
+        $choice->definition = $request->definition;
         $choice->quiz_id = $quiz->id;
         $choice->save();
         return redirect()->route('quizzes.choices.index', [$quiz]);

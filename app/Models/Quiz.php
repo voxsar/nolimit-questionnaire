@@ -20,4 +20,9 @@ class Quiz extends Model
     	# code...
     	return $this->hasMany("App\Models\Choice");
     }
+
+    public function answers()
+    {
+        return $this->hasMany("App\Models\Answer");
+    }
 }
