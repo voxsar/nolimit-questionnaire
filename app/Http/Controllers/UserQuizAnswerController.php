@@ -20,6 +20,21 @@ class UserQuizAnswerController extends Controller
         //
     }
 
+    public function section(User $user, Quiz $quiz, Answer $answer, $section)
+    {
+        $data = array(
+            'user' => $user,
+            'quiz' => $quiz,
+            'answer' => $answer,
+            'sections' => $quiz->questions->where('section', $section)->groupBy('category'),
+            'choicetitles' => $quiz->choices->where('section', $section),
+            'section' => $section,
+            'back' => $quiz->questions->where('section', $section)->first()->previoussection,
+            'next' => $quiz->questions->where('section', $section)->first()->nextsection,
+        );
+        return view('quizzes.section', $data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -46,7 +46,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<x-input name="service_perid" help="Service period of the Employee" label="Service Period" type="date" />
+				<x-input name="service_period" help="Service period of the Employee" label="Service Period" type="date" />
 			</div>
 			<div class="col-md-6">
 				<x-input name="department_head" value="" help="Department Head of the employee" label="Department Head" list="evaluatorlist" />

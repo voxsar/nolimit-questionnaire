@@ -70,8 +70,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<a href="{{route('quizzes.section', [$quiz, $back])}}" class="btn btn-primary">Previous Section</a>
-				<a href="{{route('quizzes.section', [$quiz, $next])}}" class="btn btn-primary">Next Section</a>
+				<a href="{{route('users.quizzes.answers.section', [$user, $quiz, $answer, $back])}}" class="btn btn-primary">Previous Section</a>
+				<a href="{{route('users.quizzes.answers.section', [$user, $quiz, $answer, $next])}}" class="btn btn-primary">Next Section</a>
 			</div>
 		</div>
 	</div>

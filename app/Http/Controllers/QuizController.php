@@ -85,20 +85,6 @@ class QuizController extends Controller
         return view('quizzes.show', $data);
     }
 
-    public function section(Quiz $quiz, $section)
-    {
-        $data = array(
-            'quiz' => $quiz,
-            'sections' => $quiz->questions->where('section', $section)->groupBy('category'),
-            'choicetitles' => $quiz->choices->where('section', $section),
-            'section' => $section,
-            'back' => $quiz->questions->where('section', $section)->first()->previoussection,
-            'next' => $quiz->questions->where('section', $section)->first()->nextsection,
-        );
-        //return $data;
-        return view('quizzes.section', $data);
-    }
-
     /**
      * Show the form for editing the specified resource.
      *

@@ -19,11 +19,13 @@ Route::get('/', function () {
 
 Route::get('quizzes/{quiz}/users', [\App\Http\Controllers\QuizController::class, 'users'])->name("quizzes.user");
 Route::post('quizzes/{quiz}/users', [\App\Http\Controllers\QuizController::class, 'selectuser'])->name("quizzes.selectuser");
-Route::get('quizzes/{quiz}/section/{section}', [\App\Http\Controllers\QuizController::class, 'section'])->name("quizzes.section");
 Route::resource('quizzes', QuizController::class);
 Route::resource('quizzes.questions', QuestionController::class);
 Route::resource('quizzes.choices', ChoiceController::class);
 
+
 Route::resource('users', UserController::class);
 Route::resource('users.quizzes', UserQuizController::class);
+
+Route::get('users/{user}/quizzes/{quiz}/answers/{answer}/section/{section}', [\App\Http\Controllers\UserQuizAnswerController::class, 'section'])->name("users.quizzes.answers.section");
 Route::resource('users.quizzes.answers', UserQuizAnswerController::class);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Quiz;
 use App\Models\User;
+use App\Models\Answer;
 use Illuminate\Http\Request;
 
 class UserQuizController extends Controller
@@ -104,7 +105,20 @@ class UserQuizController extends Controller
     public function update(Request $request, User $user, Quiz $quiz)
     {
         //
-        return $request;
+        $answer = Answer::firstOrCreate(
+            [
+                'quiz_id' => $quiz->id,
+                'user_id' => $user->id,
+            ],
+            [
+                'date_appraisal' => $request->date_appraisal, 
+                'evaluator' => $request->evaluator,
+                'direct_supervisor' => $request->direct_supervisor,
+                'service_period' => $request->service_period,
+                'department_head' => $request->department_head,
+            ]
+        );
+        return redirect()->route("users.quizzes.answers.section", [$user, $quiz, $answer, $request->next]);
     }
 
     /**
