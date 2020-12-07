@@ -43,6 +43,13 @@ class DatabaseSeeder extends Seeder
                 'quiz_id' => '1'
             ],
             [
+                'choice' => 'Proficient',
+                'rating_value' => '3',
+                'section' => 'Section 01: Managerial Aspects',
+                'definition' => '',
+                'quiz_id' => '1'
+            ],
+            [
                 'choice' => 'Need Improvement',
                 'rating_value' => '2',
                 'section' => 'Section 01: Managerial Aspects',
@@ -70,6 +77,13 @@ class DatabaseSeeder extends Seeder
                 'rating_value' => '4',
                 'section' => 'Section 02: Behavioral Skills',
                 'definition' => 'The employee is highly capable and frequently exceeds expectations in one or more aspects of the stated components. Demonstrates above average ability and initiative.',
+                'quiz_id' => '1'
+            ],
+            [
+                'choice' => 'Proficient',
+                'rating_value' => '3',
+                'section' => 'Section 02: Behavioral Skills',
+                'definition' => '',
                 'quiz_id' => '1'
             ],
             [

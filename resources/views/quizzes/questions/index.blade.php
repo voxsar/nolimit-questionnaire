@@ -26,9 +26,9 @@
 						<td>{{$question->section}}</td>
 						<td>{{$question->type}}</td>
 						<td>
-							<a class="btn btn-success" href="{{route('quizzes.questions.show', [$quiz, $question])}}">View Question</a>
-							<a class="btn btn-primary" href="{{route('quizzes.questions.edit', [$quiz, $question])}}">Edit Question</a>
-							<a class="btn btn-danger" href="{{route('quizzes.questions.show', [$quiz, $question])}}">Delete Question</a>
+							<a class="btn btn-success btn-block btn-sm" href="{{route('quizzes.questions.show', [$quiz, $question])}}">View Question</a>
+							<a class="btn btn-primary btn-block btn-sm" href="{{route('quizzes.questions.edit', [$quiz, $question])}}">Edit Question</a>
+							<a class="btn btn-danger btn-block btn-sm" href="{{route('quizzes.questions.show', [$quiz, $question])}}">Delete Question</a>
 						</td>
 					</tr>
 				@empty
