@@ -13,11 +13,13 @@
 			<table class="table">
 				<tr>
 					<th>Name</th>
+					<th>Group</th>
 					<th colspan="3">Actions</th>
 				</tr>
 				@forelse($quizzes as $quiz)
 					<tr>
 						<td>{{$quiz->name}}</td>
+						<td>{{$quiz->group}}</td>
 						<td>
 							<a class="btn btn-success btn-block" href="{{route('quizzes.show', $quiz)}}">View Appraisal</a>
 							<a class="btn btn-primary btn-block" href="{{route('quizzes.edit', $quiz)}}">Edit Appraisal</a>
@@ -33,9 +35,15 @@
 						</td>
 					</tr>
 					<tr >
-						<td class="border-top-0" >Individual Appraisal Link for {{$quiz->name}}</td>
+						<td class="border-top-0" colspan="2" >Individual Appraisal Link for {{$quiz->name}}</td>
 						<td class="border-top-0" colspan="3">
 							<a class="form-control user-select-all" type="text" name="no">{{route("quizzes.user", $quiz)}}</a>
+						</td>
+					</tr>
+					<tr >
+						<td class="border-top-0" colspan="2" >Group Appraisal Link for {{$quiz->group}}</td>
+						<td class="border-top-0" colspan="3">
+							<a class="form-control user-select-all" type="text" name="no">{{route("quizzes.group", $quiz->group)}}</a>
 						</td>
 					</tr>
 				@empty

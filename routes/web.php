@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 Route::get('quizzes/{quiz}/users', [\App\Http\Controllers\QuizController::class, 'users'])->name("quizzes.user");
 Route::post('quizzes/{quiz}/users', [\App\Http\Controllers\QuizController::class, 'selectuser'])->name("quizzes.selectuser");
+
+Route::get('quizzes/group/{group}/users/{user}', [\App\Http\Controllers\QuizController::class, 'grouplists'])->name("quizzes.list");
+Route::get('quizzes/group/{group}/users', [\App\Http\Controllers\QuizController::class, 'groupsections'])->name("quizzes.group");
+Route::post('quizzes/group/{group}/users', [\App\Http\Controllers\QuizController::class, 'groupselectuser'])->name("quizzes.groupselectuser");
 Route::resource('quizzes', QuizController::class);
 Route::resource('quizzes.questions', QuestionController::class);
 Route::resource('quizzes.choices', ChoiceController::class);

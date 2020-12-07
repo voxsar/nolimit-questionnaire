@@ -41,6 +41,41 @@ class QuizController extends Controller
         }
     }
 
+    public function groupsections($group)
+    {
+        # code...
+        $quizzes = Quiz::where('group', $group)->get();
+        $quiz = Quiz::where('group', $group)->first();
+        $data = array(
+            'group' => $group,
+            'quizzes' => $quizzes,
+            'quiz' => $quiz,
+        );
+        return view("quizzes.groups", $data);
+    }
+
+    public function groupselectuser(Request $request)
+    {
+        # code...
+        $user = User::where('emp_no', $request->emp_no)->first();
+        if($user){
+            return redirect()->route('quizzes.list', [$request->group, $user]);
+        }else{
+            return redirect()->route('quizzes.group', $request->group);
+        }
+    }
+
+    public function grouplists($group, User $user)
+    {
+        # code...
+        $quizzes = Quiz::where('group', $group)->get();
+        $data = array(
+            'quizzes' => $quizzes,
+            'user' => $user,
+        );
+        return view("quizzes.grouplist", $data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -63,6 +98,7 @@ class QuizController extends Controller
         //
         $quiz = new Quiz();
         $quiz->name = $request->name;
+        $quiz->group = $request->group;
         $quiz->purpose = $request->purpose;
         $quiz->instructions = $request->instructions;
         $quiz->save();
@@ -124,6 +160,7 @@ class QuizController extends Controller
     {
         //
         $quiz->name = $request->name;
+        $quiz->group = $request->group;
         $quiz->purpose = $request->purpose;
         $quiz->instructions = $request->instructions;
         $quiz->save();

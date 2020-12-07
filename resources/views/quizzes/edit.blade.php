@@ -14,17 +14,22 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<x-input name="name" help="Name of the quiz" label="Appraisal Name" value="{{$quiz->name}}" />
+				<x-input name="name" help="Name of the Appraisal" label="Appraisal Name" value="{{$quiz->name}}" />
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<x-textarea name="purpose" help="Purpose of Appraisal" label="Purpose" value="{{$quiz->purpose}}" />
+				<x-input name="group" help="Group of the Appraisal" label="Appraisal Group" value="{{$quiz->group}}"  />
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<x-textarea name="instructions" help="Instructions for the Appraisal" label="Instructions" value="{{$quiz->instructions}}" />
+				<x-textarea name="purpose" help="Purpose of Appraisal" label="Purpose" value="{!!$quiz->purpose!!}" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<x-textarea name="instructions" help="Instructions for the Appraisal" label="Instructions" value="{!!$quiz->instructions!!}" />
 			</div>
 		</div>
 		<div class="row">

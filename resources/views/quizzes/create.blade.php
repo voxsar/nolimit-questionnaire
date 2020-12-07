@@ -12,7 +12,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<x-input name="name" help="Name of the quiz" label="Appraisal Name" />
+				<x-input name="name" help="Name of the Appraisal" label="Appraisal Name" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<x-input name="group" help="Group of the Appraisal" label="Appraisal Group" />
 			</div>
 		</div>
 		<div class="row">
