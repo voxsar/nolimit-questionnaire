@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
     	Quiz::insert([
     		[
     			'name' => 'Showroom EPA',
+                'group' => 'GRP1',
     			'purpose' => "<p><b>The Purpose of this Performance Appraisal: </b></p><ul><li>Motivate Employee for performance improvement. </li><li>Measure the effectiveness of employee’s competency comparing with the requirement.</li><li>Inform employee about performance management’s principle and development program.</li><li>Implement the fairness principle in evaluating employee’s level of working attainment and effectiveness of competency through open, transparency, two way, interactive communication between employee and direct supervisor.</li><li>Implement active participation of employee and direct supervisor for the evaluation as follows;</li><li>Direct Supervisor: Build and create good atmosphere for motivation enhancement, competency development and performance improvement.</li><li>Employee: Communicate aspiration, self-potentials development, and opportunity to improve performance and competency level. </li></ul>",
     			'instructions' => "<p><b>Instructions:</b></p><ol><li>Place an 'X' in the box under the Rating Scale that most states your evaluation of each stated components.</li><li>Consider the individual's entire performance throughout the year. Don't base your judgment on one or two incidents.</li><li>Space is provided on the last page for comments and explanations.</li></ol>",
     		]
@@ -535,6 +536,8 @@ class DatabaseSeeder extends Seeder
                 'quiz_id' => '1',
             ],
         ]);
+
+        $this->call(SupervisorSeeder::class);
 
         User::insert([
             [
