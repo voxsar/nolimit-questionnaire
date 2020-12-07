@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.user')
 @push('title')
 	Group Appraisals
 @endpush
