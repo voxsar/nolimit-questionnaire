@@ -1,6 +1,6 @@
 <div class="form-group">
 	<label >{{$label}}</label>
-	<textarea name="{{$name}}" class="form-control summernote{{$name}}"></textarea>
+	<textarea name="{{$name}}" class="form-control summernote{{$name}}">{!!$value!!}</textarea>
 	@isset($help)
 		<small id="emailHelp" class="form-text text-muted">{{$help}}</small>
 	@endisset
@@ -9,7 +9,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			@isset($value)
-				$('.summernote{{$name}}').summernote('code', '{!!$value!!}');
+				$('.summernote{{$name}}').summernote();
 			@endisset
 		});
 	</script>
