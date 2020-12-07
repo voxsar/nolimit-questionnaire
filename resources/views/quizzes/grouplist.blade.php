@@ -7,8 +7,8 @@
 @endpush
 @section('page')
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
+	<div class="row mt-5">
+		<div class="col-md-12 mt-5">
 			<table class="table">
 				<tr>
 					<th>Name</th>
