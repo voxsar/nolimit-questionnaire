@@ -12,9 +12,7 @@
 @push("scripts")
 	<script type="text/javascript">
 		$(document).ready(function() {
-			@isset($value)
-				$('.summernote{{$name}}').summernote();
-			@endisset
+			$('.summernote{{$name}}').summernote();
 		});
 	</script>
 @endpush
