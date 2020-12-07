@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.user')
 @push('title')
 	{{$quiz->name}}
 @endpush
