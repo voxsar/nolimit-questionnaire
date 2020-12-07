@@ -3,6 +3,8 @@
 	{{$quiz->name}}
 @endpush
 @push('breadcrumbs')
+	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Appraisals</a></li>
+	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.show', $quiz)}}">{{$quiz->name}}</a></li>
 @endpush
 @section('page')
 <div class="container">

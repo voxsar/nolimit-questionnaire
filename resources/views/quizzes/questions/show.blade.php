@@ -6,7 +6,7 @@
 	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Appraisals</a></li>
 	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.show', $quiz)}}">{{$quiz->name}}</a></li>
 	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.questions.index', $quiz)}}">Questions</a></li>
-	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.questions.show', [$quiz, $question])}}">Show</a></li>
+	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.questions.show', [$quiz, $question])}}">{{$question->question}}</a></li>
 @endpush
 @section('page')
 <form action="{{route('quizzes.questions.store', $quiz)}}" method="post">

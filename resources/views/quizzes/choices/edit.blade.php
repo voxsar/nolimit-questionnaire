@@ -5,12 +5,14 @@
 @push('breadcrumbs')
 	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.index')}}">Appraisals</a></li>
 	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.show', $quiz)}}">{{$quiz->name}}</a></li>
-	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.choices.index', [$quiz])}}">Choices</a></li>
-	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.choices.create', [$quiz])}}">Create</a></li>
+	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.choices.index', [$quiz])}}">Choices</a></li>
+	<li class="breadcrumb-item" aria-current="page"><a href="{{route('quizzes.choices.show', [$quiz, $choice])}}">{{$choice->choice}}</a></li>
+	<li class="breadcrumb-item active" aria-current="page"><a href="{{route('quizzes.choices.edit', [$quiz, $choice])}}">Edit</a></li>
 @endpush
 @section('page')
-<form action="{{route('quizzes.choices.store', [$quiz])}}" method="post">
+<form action="{{route('quizzes.choices.update', [$quiz, $choice])}}" method="post">
 	@csrf
+	@method('PATCH')
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -51,4 +53,4 @@
 		</div>
 	</div>
 </form>
-@endsectio
+@endsection

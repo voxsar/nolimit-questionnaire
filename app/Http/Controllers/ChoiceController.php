@@ -71,6 +71,12 @@ class ChoiceController extends Controller
     public function show(Quiz $quiz, Choice $choice)
     {
         //
+        $data = array(
+            'quiz' => $quiz, 
+            'choice' => $choice,
+            'sections' => $quiz->questions->unique('section')->pluck('section')
+        );
+        return view("quizzes.choices.show", $data);
     }
 
     /**
@@ -83,6 +89,12 @@ class ChoiceController extends Controller
     public function edit(Quiz $quiz, Choice $choice)
     {
         //
+        $data = array(
+            'quiz' => $quiz, 
+            'choice' => $choice,
+            'sections' => $quiz->questions->unique('section')->pluck('section')
+        );
+        return view("quizzes.choices.edit", $data);
     }
 
     /**
@@ -96,6 +108,13 @@ class ChoiceController extends Controller
     public function update(Request $request, Quiz $quiz, Choice $choice)
     {
         //
+        $choice->choice = $request->choice;
+        $choice->rating_value = $request->rating_value;
+        $choice->section = $request->section;
+        $choice->definition = $request->definition;
+        $choice->quiz_id = $quiz->id;
+        $choice->save();
+        return redirect()->route('quizzes.choices.index', [$quiz]);
     }
 
     /**

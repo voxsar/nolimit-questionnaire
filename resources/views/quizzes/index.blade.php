@@ -24,6 +24,7 @@
 							<a class="btn btn-danger" href="{{route('quizzes.show', $quiz)}}">Delete Appraisal</a>
 							<a class="btn btn-primary" href="{{route('quizzes.questions.index', $quiz)}}">View Questions</a>
 							<a class="btn btn-primary" href="{{route('quizzes.questions.create', $quiz)}}">Add Questions</a>
+							<a class="btn btn-primary" href="{{route('quizzes.choices.index', $quiz)}}">View Choices</a>
 							<a class="btn btn-primary" href="{{route('quizzes.choices.create', $quiz)}}">Add Choices</a>
 						</td>
 					</tr>
