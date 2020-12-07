@@ -102,12 +102,20 @@ class QuestionController extends Controller
     public function update(Request $request, Quiz $quiz, Question $question)
     {
         //
+        if($request->has("submit")){
+            if($request->submit == "Update Section Name"){
+                Question::where('quiz_id', $quiz->id)
+                    ->where('section', $question->section)
+                    ->update(['section' => $request->section]);
+            }
+        }
         $question->question = $request->name;
         $question->category = $request->category;
         $question->section = $request->section;
         $question->type = $request->type;
         $question->quiz_id = $quiz->id;
         $question->save();
+
         return redirect()->route('quizzes.questions.index', $quiz);
     }
 

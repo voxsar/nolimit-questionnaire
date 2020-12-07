@@ -53,7 +53,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<input type="submit" value="Update Question" class="btn btn-success">
+				<input type="submit" value="Update Question" name="submit" class="btn btn-success">
+				<input type="submit" value="Update Section Name" name="submit" class="btn btn-success">
 			</div>
 		</div>
 	</div>
