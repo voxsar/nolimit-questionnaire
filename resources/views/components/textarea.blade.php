@@ -1,6 +1,10 @@
 <div class="form-group">
 	<label >{{$label}}</label>
-	<textarea name="{{$name}}" class="form-control summernote{{$name}}">{!!$value!!}</textarea>
+	<textarea name="{{$name}}" class="form-control summernote{{$name}}">
+		@isset($value)
+			{!!$value!!}
+		@endisset
+	</textarea>
 	@isset($help)
 		<small id="emailHelp" class="form-text text-muted">{{$help}}</small>
 	@endisset
