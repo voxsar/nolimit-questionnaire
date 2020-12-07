@@ -538,6 +538,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(SupervisorSeeder::class);
+        $this->call(DepartmentSeeder::class);
 
         User::insert([
             [
