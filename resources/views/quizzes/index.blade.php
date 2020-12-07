@@ -35,7 +35,7 @@
 					<tr >
 						<td class="border-top-0" >Individual Appraisal Link for {{$quiz->name}}</td>
 						<td class="border-top-0" colspan="3">
-							<input class="form-control" type="text" name="no" value="{{route("quizzes.user", $quiz)}}" />
+							<a class="form-control user-select-all" type="text" name="no">{{route("quizzes.user", $quiz)}}</a>
 						</td>
 					</tr>
 				@empty
