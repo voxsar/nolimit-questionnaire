@@ -40,12 +40,14 @@
 							<a class="form-control user-select-all" type="text" name="no">{{route("quizzes.user", $quiz)}}</a>
 						</td>
 					</tr>
-					<tr >
-						<td class="border-top-0" colspan="2" >Group Appraisal Link for {{$quiz->group}}</td>
-						<td class="border-top-0" colspan="3">
-							<a class="form-control user-select-all" type="text" name="no">{{route("quizzes.group", $quiz->group)}}</a>
-						</td>
-					</tr>
+					@if($quiz->group != "")
+						<tr >
+							<td class="border-top-0" colspan="2" >Group Appraisal Link for {{$quiz->group}}</td>
+							<td class="border-top-0" colspan="3">
+								<a class="form-control user-select-all" type="text" name="no">{{route("quizzes.group", $quiz->group)}}</a>
+							</td>
+						</tr>
+					@endif
 				@empty
 				@endforelse
 			</table>
