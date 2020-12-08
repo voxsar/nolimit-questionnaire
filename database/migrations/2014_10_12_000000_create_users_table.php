@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('emp_no');
             $table->string('department');
             $table->string('designation');
+            $table->string('service_period')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

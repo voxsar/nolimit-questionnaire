@@ -16,10 +16,9 @@ class CreateAnswersTable extends Migration
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
             $table->string('date_appraisal');
-            $table->string('evaluator');
-            $table->string('direct_supervisor');
-            $table->string('service_period');
-            $table->string('department_head');
+            $table->string('evaluator')->nullable();
+            $table->string('direct_supervisor')->nullable();
+            $table->string('department_head')->nullable();
             $table->foreignId('quiz_id')
               ->nullable()
               ->constrained()

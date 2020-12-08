@@ -7,6 +7,7 @@ use App\Models\Quiz;
 use App\Models\User;
 use App\Models\Answer;
 use Illuminate\Http\Request;
+use App\Http\Requests\RequestUserQuiz;
 
 class UserQuizController extends Controller
 {
@@ -63,10 +64,15 @@ class UserQuizController extends Controller
         foreach($quiz->choices->groupBy('section') as $choices){
             foreach($quiz->questions->groupBy('section') as $key => $questions){
                 foreach($choices as $choice){
-                    $table->push([
-                        "score" => "Score: ".$key,
-                        "total" => $choices->max('rating_value') * $questions->count(),
-                    ]);
+                    if($choice->section == $key){
+                        $table->push([
+                            "score" => "Score: ".$key,
+                            "total" => $choices->max('rating_value') * $questions->count(),
+                            "answer" => $questions->sum(function ($question) {
+                                            return $question->sections->sum('answer');
+                                        }),
+                        ]);
+                    }
                 }
             }
         }
@@ -96,10 +102,15 @@ class UserQuizController extends Controller
         foreach($quiz->choices->groupBy('section') as $choices){
             foreach($quiz->questions->groupBy('section') as $key => $questions){
                 foreach($choices as $choice){
-                    $table->push([
-                        "score" => "Score: ".$key,
-                        "total" => $choices->max('rating_value') * $questions->count(),
-                    ]);
+                    if($choice->section == $key){
+                        $table->push([
+                            "score" => "Score: ".$key,
+                            "total" => $choices->max('rating_value') * $questions->count(),
+                            "answer" => $questions->sum(function ($question) {
+                                            return $question->sections->sum('answer');
+                                        }),
+                        ]);
+                    }
                 }
             }
         }
@@ -128,7 +139,7 @@ class UserQuizController extends Controller
      * @param  \App\Models\Quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user, Quiz $quiz)
+    public function update(RequestUserQuiz $request, User $user, Quiz $quiz)
     {
         //
         $answer = Answer::firstOrCreate(
@@ -140,7 +151,6 @@ class UserQuizController extends Controller
                 'date_appraisal' => $request->date_appraisal, 
                 'evaluator' => $request->evaluator,
                 'direct_supervisor' => $request->direct_supervisor,
-                'service_period' => $request->service_period,
                 'department_head' => $request->department_head,
             ]
         );

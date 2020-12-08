@@ -25,6 +25,11 @@
 		</div>
 	</div>
 	<div class="row">
+		<div class="col-md-6">
+			<x-input name="service_period" value="{{$user->service_period}}" help="Service Period" label="Service Period" />
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-md-12">
 			<a href="{{route("users.edit", $user)}}" class="btn btn-success">Edit This User</a>
 		</div>

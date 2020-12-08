@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Quiz;
 use App\Models\Answer;
 use Illuminate\Http\Request;
+use App\Http\Requests\RequestUserQuizAnswer;
 
 class UserQuizAnswerController extends Controller
 {
@@ -90,12 +91,33 @@ class UserQuizAnswerController extends Controller
      * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user, Quiz $quiz, Answer $answer)
+    public function update(RequestUserQuizAnswer $request, User $user, Quiz $quiz, Answer $answer)
     {
         //
         if($request->has("questions")){
             foreach ($request->questions as $key => $value) {
                 # code...
+                if(array_key_exists('answer', $value)){
+                    $answer->sections()->updateOrCreate(
+                        [
+                            'user_id' => $user->id,
+                            'answer_id' => $answer->id,
+                            'question_id' => $value['question'],
+                        ],
+                        [
+                            'answer' => $value['answer'],
+                            'category' => $value['category'],
+                            'section' => $value['section'],
+                            'type' =>  $value['type'],
+                        ]
+                    );
+                }else{
+                   return redirect()->back();
+                }
+            }
+        }
+        if($request->has("summary")){
+            foreach ($request->summary as $key => $value) {
                 if(array_key_exists('answer', $value)){
                     $answer->sections()->updateOrCreate(
                         [

@@ -27,6 +27,11 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-md-6">
+				<x-input name="service_period" help="Service Period" label="Service Period" />
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-12">
 				<input type="submit" value="Add User" class="btn btn-success">
 			</div>

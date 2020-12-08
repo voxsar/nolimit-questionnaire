@@ -37,7 +37,7 @@
 						<tr>
 							<td>{{$choice->rating_value}}</td>
 							<td>{{$choice->choice}}</td>
-							<td>{{$choice->definition}}</td>
+							<td>{!!$choice->definition!!}</td>
 						</tr>
 					@empty
 					@endforelse
@@ -55,7 +55,7 @@
 		<div class="col-md-6">
 			<table class="table">
 				<tr>
-					<th>Score</th>
+					<th>Sections</th>
 					<th>Total</th>
 				</tr>
 				@forelse($table->unique('score') as $row)

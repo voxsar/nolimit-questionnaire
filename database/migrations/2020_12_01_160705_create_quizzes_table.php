@@ -17,8 +17,8 @@ class CreateQuizzesTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("group")->nullable();
-            $table->text("purpose");
-            $table->text("instructions");
+            $table->text("purpose")->nullable();
+            $table->text("instructions")->nullable();
             $table->timestamps();
         });
     }

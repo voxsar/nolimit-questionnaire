@@ -26,11 +26,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<div class="form-group">
-					<label >Definition</label>
-					<textarea class="form-control" name="definition">{{$choice->definition}}</textarea>
-					<small class="form-text text-muted">Definition of the Rating</small>
-				</div>
+				<x-textarea name="definition" value="{!!$choice->definition!!}" help="Definition of the Rating" label="Definition" />
 			</div>
 		</div>
 		<div class="row">

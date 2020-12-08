@@ -16,9 +16,9 @@ class CreateChoicesTable extends Migration
         Schema::create('choices', function (Blueprint $table) {
             $table->id();
             $table->string("choice");
-            $table->integer('rating_value');
-            $table->string("section");
-            $table->text("definition");
+            $table->integer('rating_value')->default(0);
+            $table->string("section")->nullable();;
+            $table->text("definition")->nullable();;
             $table->foreignId('quiz_id')
               ->nullable()
               ->constrained()

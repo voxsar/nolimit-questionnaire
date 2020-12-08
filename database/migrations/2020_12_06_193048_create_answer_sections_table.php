@@ -16,9 +16,9 @@ class CreateAnswerSectionsTable extends Migration
         Schema::create('answer_sections', function (Blueprint $table) {
             $table->id();
             $table->string("answer");
-            $table->string("category");
-            $table->string("section");
-            $table->string("type");
+            $table->string("category")->nullable();;
+            $table->string("section")->nullable();;
+            $table->string("type")->nullable();;
             $table->foreignId('answer_id')
               ->nullable()
               ->constrained()

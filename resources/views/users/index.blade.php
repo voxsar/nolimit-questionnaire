@@ -16,6 +16,7 @@
 					<th>Name</th>
 					<th>Department</th>
 					<th>Designation</th>
+					<th>Service Date</th>
 					<th>Actions</th>
 				</tr>
 				@forelse($users as $user)
@@ -24,6 +25,7 @@
 						<td>{{$user->name}}</td>
 						<td>{{$user->department}}</td>
 						<td>{{$user->designation}}</td>
+						<td>{{$user->service_period}}</td>
 						<td>
 							<a class="btn btn-success btn-sm btn-block" href="{{route('users.show', $user)}}">View User</a>
 							<a class="btn btn-primary btn-sm btn-block" href="{{route('users.edit', $user)}}">Edit User</a>

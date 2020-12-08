@@ -534,6 +534,14 @@ class DepartmentSeeder extends Seeder
                 'type' => '1',
                 'quiz_id' => '2',
             ],
+
+            [
+                'question' => 'Employees Strengths, Coaching/ Development Areas  & Supervisor’s Comments',
+                'category' => 'N/A',
+                'section' => 'Section 03: Summary Comments',
+                'type' => '2',
+                'quiz_id' => '2',
+            ],
         ]);
     }
 }

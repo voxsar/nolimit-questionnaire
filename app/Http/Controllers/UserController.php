@@ -45,6 +45,7 @@ class UserController extends Controller
         $user->emp_no = $request->emp_no;
         $user->department = $request->department;
         $user->designation = $request->designation;
+        $user->service_period = $request->service_period;
         $user->email = $request->emp_no."@nolimit.com";
         $user->email_verified_at = Carbon::now();
         $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
@@ -92,6 +93,7 @@ class UserController extends Controller
         $user->emp_no = $request->emp_no;
         $user->department = $request->department;
         $user->designation = $request->designation;
+        $user->service_period = $request->service_period;
         $user->email = $request->emp_no."@nolimit.com";
         $user->email_verified_at = Carbon::now();
         $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';

@@ -33,35 +33,35 @@ class DatabaseSeeder extends Seeder
                 'choice' => 'Exceptional',
                 'rating_value' => '5',
                 'section' => 'Section 01: Managerial Aspects',
-                'definition' => 'The employee consistently exceeds job requirements. Exceptional in all aspects of the stated components. Extraordinary accomplishment or achievement.Outstanding work.',
+                'definition' => 'The employee consistently exceeds job requirements. Exceptional in all aspects of the stated components.<br><b>Extraordinary accomplishment or achievement.Outstanding work.</b>',
                 'quiz_id' => '1'
             ],
             [
                 'choice' => 'Highly Effective',
                 'rating_value' => '4',
                 'section' => 'Section 01: Managerial Aspects',
-                'definition' => 'The employee is highly capable and frequently exceeds expectations in one or more aspects of the stated components. Demonstrates above average ability and initiative.',
+                'definition' => 'The employee is highly capable and frequently exceeds expectations in one or more aspects of the stated components.<br><b>Demonstrates above average ability and initiative.</b>',
                 'quiz_id' => '1'
             ],
             [
                 'choice' => 'Proficient',
                 'rating_value' => '3',
                 'section' => 'Section 01: Managerial Aspects',
-                'definition' => '',
+                'definition' => 'The employee is performing at the expected level in all aspects of the stated components on a regular basis.<br><b>Needs Certain Improvement</b>',
                 'quiz_id' => '1'
             ],
             [
                 'choice' => 'Need Improvement',
                 'rating_value' => '2',
                 'section' => 'Section 01: Managerial Aspects',
-                'definition' => 'Performance meets some, but not all requirements of the stated components and Job accomplishments fall short of expectations. Improvement is necessary.',
+                'definition' => 'Performance meets some, but not all requirements of the stated components and Job accomplishments fall short of expectations.<br><b>Improvement is necessary.</b>',
                 'quiz_id' => '1'
             ],
             [
                 'choice' => 'Unsatisfactory',
                 'rating_value' => '1',
                 'section' => 'Section 01: Managerial Aspects',
-                'definition' => 'Performance does not meet most aspects of the stated components, also fails to demonstrate sufficient ability and requires regular and ongoing attention. Immediate improvement is required.',
+                'definition' => 'Performance does not meet most aspects of the stated components, also fails to demonstrate sufficient ability and requires regular and ongoing attention.<br><b>Immediate improvement is required.</b>',
                 'quiz_id' => '1'
             ],
 
@@ -70,35 +70,35 @@ class DatabaseSeeder extends Seeder
                 'choice' => 'Exceptional',
                 'rating_value' => '5',
                 'section' => 'Section 02: Behavioral Skills',
-                'definition' => 'The employee consistently exceeds job requirements. Exceptional in all aspects of the stated components. Extraordinary accomplishment or achievement.Outstanding work.',
+                'definition' => 'The employee consistently exceeds job requirements. Exceptional in all aspects of the stated components.<br><b>Extraordinary accomplishment or achievement.Outstanding work.</b>',
                 'quiz_id' => '1'
             ],
             [
                 'choice' => 'Highly Effective',
                 'rating_value' => '4',
                 'section' => 'Section 02: Behavioral Skills',
-                'definition' => 'The employee is highly capable and frequently exceeds expectations in one or more aspects of the stated components. Demonstrates above average ability and initiative.',
+                'definition' => 'The employee is highly capable and frequently exceeds expectations in one or more aspects of the stated components.<br><b>Demonstrates above average ability and initiative.</b>',
                 'quiz_id' => '1'
             ],
             [
                 'choice' => 'Proficient',
                 'rating_value' => '3',
                 'section' => 'Section 02: Behavioral Skills',
-                'definition' => '',
+                'definition' => 'The employee is performing at the expected level in all aspects of the stated components on a regular basis.<br><b>Needs Certain Improvement</b>',
                 'quiz_id' => '1'
             ],
             [
                 'choice' => 'Need Improvement',
                 'rating_value' => '2',
                 'section' => 'Section 02: Behavioral Skills',
-                'definition' => 'Performance meets some, but not all requirements of the stated components and Job accomplishments fall short of expectations. Improvement is necessary.',
+                'definition' => 'Performance meets some, but not all requirements of the stated components and Job accomplishments fall short of expectations.<br><b>Improvement is necessary.</b>',
                 'quiz_id' => '1'
             ],
             [
                 'choice' => 'Unsatisfactory',
                 'rating_value' => '1',
                 'section' => 'Section 02: Behavioral Skills',
-                'definition' => 'Performance does not meet most aspects of the stated components, also fails to demonstrate sufficient ability and requires regular and ongoing attention. Immediate improvement is required.',
+                'definition' => 'Performance does not meet most aspects of the stated components, also fails to demonstrate sufficient ability and requires regular and ongoing attention.<br><b>Immediate improvement is required.</b>',
                 'quiz_id' => '1'
             ],
         ]);
@@ -535,10 +535,18 @@ class DatabaseSeeder extends Seeder
                 'type' => '1',
                 'quiz_id' => '1',
             ],
+
+            [
+                'question' => 'Employees Strengths, Coaching/ Development Areas  & Supervisor’s Comments',
+                'category' => 'N/A',
+                'section' => 'Section 03: Summary Comments',
+                'type' => '2',
+                'quiz_id' => '1',
+            ],
         ]);
 
-        $this->call(SupervisorSeeder::class);
         $this->call(DepartmentSeeder::class);
+        $this->call(SupervisorSeeder::class);
 
         User::insert([
             [
