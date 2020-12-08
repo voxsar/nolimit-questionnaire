@@ -20,7 +20,7 @@
 					<tr>
 						<td>{{$quiz->name}}</td>
 						<td>
-							@if($quiz->answers()->exists())
+							@if($quiz->answers()->where('user_id', $user->id)->exists())
 								<a class="btn btn-warning" href="{{route('users.quizzes.edit', [$user, $quiz])}}">Edit Appraisal</a>
 							@else
 								<a class="btn btn-success" href="{{route('users.quizzes.show', [$user, $quiz])}}">Fill Appraisal</a>
