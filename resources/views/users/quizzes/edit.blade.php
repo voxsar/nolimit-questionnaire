@@ -19,7 +19,7 @@
 				<x-input disabled="disabled" name="emp_no" value="{{$user->emp_no}}" help="Employee no" label="Employee No" />
 			</div>
 			<div class="col-md-6">
-				<x-input name="date_appraisal" value="{{$date}}" help="Appraisal Date" label="Date" type="date" />
+				<x-input disabled="disabled" name="date_appraisal" value="{{$date}}" help="Appraisal Date" label="Date" type="date" />
 			</div>
 		</div>
 		<div class="row">
@@ -27,7 +27,7 @@
 				<x-input disabled="disabled" name="designation" value="{{$user->designation}}" help="Designation of the Employee" label="Designation" />
 			</div>
 			<div class="col-md-6">
-				<x-input name="evaluator" value="{{$answer->evaluator}}" help="Evaluator of the employee" label="Evaluator" list="evaluatorlist" />
+				<x-input disabled="disabled" name="evaluator" value="{{$answer->evaluator}}" help="Evaluator of the employee" label="Evaluator" list="evaluatorlist" />
 				<datalist id="evaluatorlist">
 					@forelse($designations as $designation)
 						<option value="{{$designation->listname}}" />
@@ -41,7 +41,7 @@
 				<x-input disabled="disabled" name="department" value="{{$user->department}}" help="Name of the department" label="Department Name" />
 			</div>
 			<div class="col-md-6">
-				<x-input name="direct_supervisor" value="{{$answer->direct_supervisor}}" help="Direct Supervisor of the employee" label="Direct Supervisor" list="evaluatorlist" />
+				<x-input disabled="disabled" name="direct_supervisor" value="{{$answer->direct_supervisor}}" help="Direct Supervisor of the employee" label="Direct Supervisor" list="evaluatorlist" />
 			</div>
 		</div>
 		<div class="row">
@@ -49,7 +49,7 @@
 				<x-input disabled="disabled" name="service_period" value="{{$answer->service_period}}" help="Service period of the Employee" label="Service Period" type="date" />
 			</div>
 			<div class="col-md-6">
-				<x-input name="department_head" value="{{$answer->department_head}}" help="Department Head of the employee" label="Department Head" list="evaluatorlist" />
+				<x-input disabled="disabled" name="department_head" value="{{$answer->department_head}}" help="Department Head of the employee" label="Department Head" list="evaluatorlist" />
 			</div>
 		</div>
 		<div class="row">

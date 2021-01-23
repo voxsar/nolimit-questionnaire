@@ -15,6 +15,7 @@
 				<tr>
 					<th>Name</th>
 					<th>Actions</th>
+					<th>Controls</th>
 				</tr>
 				@forelse($quizzes as $quiz)
 					<tr>
@@ -25,6 +26,9 @@
 							@else
 								<a class="btn btn-success" href="{{route('users.quizzes.show', [$user, $quiz])}}">Fill Appraisal</a>
 							@endif
+						</td>
+						<td>
+							<a class="btn btn-success" href="{{route('users.quizzes.print', [$user, $quiz])}}">Print</a>
 						</td>
 					</tr>
 				@empty

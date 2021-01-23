@@ -114,7 +114,9 @@
 								<div class="m-1 p-2 col-1"></div>
 								<div class="m-1 p-2 col-6">Score</div>
 								<div class="p-1 m-1 col text-right">
-									<p><span data-count="{{$choicetitles->count()}}" data-sumvalue="{{$choicetitles->max('rating_value')}}" class="group_val_{{$count}}">0</span></p>
+									<p>
+										<span data-count="{{$choicetitles->count()}}" data-sumvalue="{{$choicetitles->max('rating_value')}}" class="group_val_{{$count}}">0</span>
+									</p>
 								</div>
 							</div>
 						@endunless

@@ -88,9 +88,31 @@ class UserQuizController extends Controller
         return view('users.quizzes.show', $data);
     }
 
+    public function print(User $user, Quiz $quiz)
+    {
+        $choices = $quiz->choices;
+        $questions = $quiz->questions;
+
+        $table = array();
+
+        $data = array(
+            'date' => Carbon::now()->format('Y-m-d'),
+            'user' => $user,
+            'quiz' => $quiz,
+            'questions' => $quiz->questions->groupBy('section')->groupBy('category'),
+            'next' => $quiz->questions->pluck('section')->first(),
+            'designations' => User::all(),
+            'table' => $table,
+        );
+        return view('users.quizzes.print', $data);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
+            $category = $choice->mapToGroups(function ($item, $key) {
+                return [$item['department'] => $item['name']];
+            });
      * @param  \App\Models\User  $user
      * @param  \App\Models\Quiz  $quiz
      * @return \Illuminate\Http\Response
