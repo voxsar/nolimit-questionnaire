@@ -1,0 +1,28 @@
+os: linux
+
+dist: focal
+
+language: php
+
+php:
+  - 7.4
+
+services:
+  - mysql
+
+cache:
+  directories:
+    - node_modules
+    - vendor
+
+before_script:
+  - cp .env.travis .env
+  - sudo mysql -e 'create database skills;'
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+  - php artisan key:generate
+  - php artisan migrate
+  - php artisan passport:install
+
+script:  
+  - vendor/bin/phpunit
