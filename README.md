@@ -1,4 +1,4 @@
-<p align="center"><a href="https://artslabcreatives.com" target="_blank"><img src="https://artslabcreatives.com/wp-content/uploads/2020/04/Dark-1-e1586270633179.png" width="400"></a></p>
+<p align="center"><a href="https://www.nolimit.lk/" target="_blank"><img src="https://www.nolimit.lk/storage/general/logo.png" width="400"></a></p>
 <p align="center">
 <a href="https://www.travis-ci.com/voxsar/nolimit-questionnaire"><img src="https://www.travis-ci.com/voxsar/nolimit-questionnaire.svg?token=4xH2xquRqoL8En2ih4LX&branch=master" alt="Build Status"></a>
 <a href=""><img alt="GitHub code size in bytes" src="https://badges.artslabcreatives.com:89/github/languages/code-size/voxsar/nolimit-questionnaire"></a>
