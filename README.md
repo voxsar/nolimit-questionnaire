@@ -1,8 +1,15 @@
 <p align="center"><a href="https://artslabcreatives.com" target="_blank"><img src="https://artslabcreatives.com/wp-content/uploads/2020/04/Dark-1-e1586270633179.png" width="400"></a></p>
+<p align="center">
+<a href="https://www.travis-ci.com/voxsar/nolimit-questionnaire"><img src="https://www.travis-ci.com/voxsar/nolimit-questionnaire.svg?token=4xH2xquRqoL8En2ih4LX&branch=master" alt="Build Status"></a>
+<a href=""><img alt="GitHub code size in bytes" src="https://badges.artslabcreatives.com:89/github/languages/code-size/voxsar/nolimit-questionnaire"></a>
+<a href=""><img alt="GitHub" src="https://badges.artslabcreatives.com:89/github/license/voxsar/nolimit-questionnaire"></a>
+<a href=""><img alt="GitHub tag (latest by date)" src="https://badges.artslabcreatives.com:89/github/v/tag/voxsar/nolimit-questionnaire?label=version"></a>
+<a href=""><img alt="GitHub release (latest by date)" src="https://badges.artslabcreatives.com:89/github/v/release/voxsar/nolimit-questionnaire"></a>
+</p>
 
-## About Artslab Creatives
+## About Nolimit
 
-We are a digital media agency that believes, through proper strategy formulation, the right amount of creativity and innovation, a brand can truly come to life, communicate and create bonds at an emotional level with their target audience.
+NOLIMIT is a leading retail chain in Sri Lanka which started its journey in 1992 and has now grown to be the largest fashion chain in the country Employing over 1800 passionate people with 20 showrooms across the island and still growing.
 
 ## About Laravel
 
