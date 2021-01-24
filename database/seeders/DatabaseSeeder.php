@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
+        /*
     	Quiz::insert([
     		[
     			'name' => 'Showroom EPA',
@@ -1773,6 +1773,6 @@ class DatabaseSeeder extends Seeder
                 'department' => 'Hyde Park',
                 'designation' => 'Sales Personnel-Trainee',
             ],
-        ]);
+        ]);*/
     }
 }

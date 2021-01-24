@@ -18,7 +18,7 @@ class SupervisorSeeder extends Seeder
     public function run()
     {
         //
-        Quiz::insert([
+        /*Quiz::insert([
     		[
     			'name' => 'Supervisor',
     			'group' => 'GRP1',
@@ -542,6 +542,6 @@ class SupervisorSeeder extends Seeder
                 'type' => '2',
                 'quiz_id' => '3',
             ],
-        ]);
+        ]);*/
     }
 }

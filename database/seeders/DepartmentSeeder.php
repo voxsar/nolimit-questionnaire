@@ -18,7 +18,7 @@ class DepartmentSeeder extends Seeder
     public function run()
     {
         //
-        Quiz::insert([
+        /*Quiz::insert([
     		[
     			'name' => 'Department',
     			'group' => 'GRP1',
@@ -542,6 +542,6 @@ class DepartmentSeeder extends Seeder
                 'type' => '2',
                 'quiz_id' => '2',
             ],
-        ]);
+        ]);*/
     }
 }
