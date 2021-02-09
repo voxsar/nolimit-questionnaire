@@ -23,6 +23,7 @@ class UserQuizAnswerController extends Controller
 
     public function section(User $user, Quiz $quiz, Answer $answer, $section)
     {
+        return $section;
         $data = array(
             'user' => $user,
             'quiz' => $quiz,
